@@ -2,6 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 // import Image from "../components/image"
+
+// --- PRIMER COMENTARIO MC
+
 import SEO from "../components/seo"
 import Login  from "../components/login"
 const IndexPage = () => (
