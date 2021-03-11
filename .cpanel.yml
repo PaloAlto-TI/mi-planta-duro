@@ -1,0 +1,5 @@
+--- 
+deployment: 
+     tasks: 
+          - export DEPLOYPATH=/home/a29a805/test.duro.com.ec/
+          - /bin/cp -R public/* $DEPLOYPATH
