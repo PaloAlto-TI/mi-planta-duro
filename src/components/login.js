@@ -46,7 +46,7 @@ export default function Login() {
             if (query.allUsers.edges[0].node.role==="ti"){
 
                 navigate("/page-2/", {state:{
-                    role: 'bodega'
+                    role: 'ti'
                 }})
             }
             
