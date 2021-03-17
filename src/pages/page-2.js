@@ -20,7 +20,7 @@ const SecondPage = ({ location }) => {
             <div className="grid xs:grid-cols-2 md:grid-cols-5 gap-4 xs:pl-8 md:pl-8  mb-28 mt-12">
     
             <div className="w-28">
-              <a href="https://paloalto.com.ec" target="_blank"><Image tipo={"gira"}  resource={"logo_sites_duro.png"} /></a>
+              <a href="https://paloalto.com.ec" target="_blank" rel="noreferrer"><Image aria-label="redirect" tipo={"gira"} resource={"logo_sites_duro.png"} /></a>
             </div>
       
             <div className="w-28 ">

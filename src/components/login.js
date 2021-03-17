@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+//import Layout from "../components/layout"
+//import SEO from "../components/seo"
 import { Link } from "gatsby"
 import firebase from "gatsby-plugin-firebase"
 import { AuthContext } from "../context/auth"

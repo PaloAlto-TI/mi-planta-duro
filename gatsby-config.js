@@ -50,7 +50,7 @@ module.exports = {
           messagingSenderId: "368301501386",
           appId: "1:368301501386:web:af3f7e84d645f6b202fd33",
           measurementId: "G-R8WZ45YDKK"
-        }
+        },
       }
     },
 
@@ -67,7 +67,6 @@ module.exports = {
               role: doc.role
             }),
           },
-          
         ],
       },
     },
