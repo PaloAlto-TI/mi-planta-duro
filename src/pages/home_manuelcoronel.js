@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 // ARCHIVO DE MANUEL CORONEL
 // el CAMBIO PUBLIC ELIMINADO
+// ARREGLO DE VERSIIONES
 
 const SecondPage = ({ location }) => {
 
