@@ -5,9 +5,7 @@ import Image from "../components/image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-// ARCHIVO DE MANUEL CORONEL
-// el CAMBIO PUBLIC ELIMINADO
-// ARREGLO DE VERSIIONES
+// ----> Ultima Versión de Pruebas
 
 const SecondPage = ({ location }) => {
 
