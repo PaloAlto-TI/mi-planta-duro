@@ -7,7 +7,7 @@ const SecondPage = ({ location }) => {
     if (location.state) {
       return(
         <Layout>
-          <SEO title="Page two" />
+          <SEO title="Page tw3" />
           
           {/* Prueba 1 */}
       
