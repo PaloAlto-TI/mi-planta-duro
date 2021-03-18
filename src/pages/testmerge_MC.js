@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // ESTE ES EL TEST MERGE MC
-
+// cualquier cosa
 const SecondPage = ({ location }) => {
 
   if (location.state) {
