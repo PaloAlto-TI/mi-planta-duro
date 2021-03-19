@@ -41,14 +41,20 @@ export default function Login() {
         try {
             const result = await firebase.auth().signInWithEmailAndPassword(data.email, data.password)
             setUser(result)
-            console.log(user);
-            console.log(query);
-            if (query.allUsers.edges[0].node.role==="ti"){
-
-                navigate("/page-2/", {state:{
-                    role: 'ti'
-                }})
+            const u = query.allUsers.edges.find(e => e.node.user_id === user.email);
+            
+            if (u){
+                if (u.node.role === "ti"){
+                    navigate("/page-2/", {state:{
+                        role: 'ti'
+                    }})
+                }else{
+                    navigate("/page-2/", {state:{
+                        role: 'bodega'
+                    }})
+                }
             }
+          
             
             
         } catch (err) {

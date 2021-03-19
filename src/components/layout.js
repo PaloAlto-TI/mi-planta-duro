@@ -25,7 +25,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      { window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : null}
+      
       <div
         style={{
           margin: `0 auto`,
