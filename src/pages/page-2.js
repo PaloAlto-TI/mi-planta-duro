@@ -1,22 +1,45 @@
 import React from "react"
 //import { Link } from "gatsby"
 import Image from "../components/image"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { navigate } from "gatsby-link"
+// import { AuthContext } from "../context/auth"
+// import { useStaticQuery, graphql } from "gatsby"
+
 
 const SecondPage = ({ location }) => {
 
-  if (location.state) {
+  //const { user } = useContext(AuthContext)
+
+  // const query = useStaticQuery(graphql`
+  //       {
+  //           allUsers {
+  //           edges {
+  //               node {
+  //               role
+  //               user_id
+  //               }
+  //           }
+  //           }
+  //       }
+  //       `)
+
+
+  ///console.log(location.state.node);
+
+
+  if (location.state){
+  if (location.state.node ) {
     return(
       <Layout>
-        <SEO title="Page two" />
+        <SEO title="Inicio" />
         
         {/* <h1>Hi from the second page</h1>
         <p>Welcome to page 2</p>
         <Link to="/">Go back to the homepage</Link> */}
     
-        {location.state.role === "bodega" ? (
+        {location.state.node.role === "bodega" ? (
             <div className="grid xs:grid-cols-2 md:grid-cols-5 gap-4 xs:pl-8 md:pl-8  mb-28 mt-12">
     
             <div className="w-28">
@@ -41,7 +64,7 @@ const SecondPage = ({ location }) => {
           </div>
       
       
-          ) : (
+          )  : ( location.state.node.role = "ti" ?
             <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-4 xs:pl-8 md:pl-52 mb-28 mt-12">
     
           <div className="w-28 ">
@@ -61,7 +84,7 @@ const SecondPage = ({ location }) => {
           </div>
     
         </div>
-    
+          : null
           )}
     
         
@@ -101,8 +124,14 @@ const SecondPage = ({ location }) => {
     
       </Layout>)
   }else{
+    navigate("/");
     return null;
   }
+
+}else{
+  navigate("/");
+    return null;
+}
   
 }
 

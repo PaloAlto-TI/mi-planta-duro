@@ -2,10 +2,18 @@
 import PropTypes from "prop-types"
 import React from "react"
 import Image from "../components/image"
+// import firebase from "gatsby-plugin-firebase"
+// import { navigate } from "gatsby-link"
 
 
-const Header = ({ siteTitle }) => (
-  <header
+const Header = ({ siteTitle }) => {
+  
+  // const handleLogout = async () =>{
+  //   await firebase.auth().signOut();
+  //   navigate("/")
+  // }
+
+  return (<header
     style={{
       background: `#fa6304`,
       marginBottom: `1.45rem`,
@@ -33,8 +41,8 @@ const Header = ({ siteTitle }) => (
         </Link> }
       </h1> */}
     </div>
-  </header>
-)
+  </header>)
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

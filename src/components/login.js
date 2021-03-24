@@ -16,7 +16,7 @@ export default function Login() {
         error: null
     })
 
-    const { user, setUser } = useContext(AuthContext)
+    const {setUser } = useContext(AuthContext)
 
     const handleChange = e => {
         setData({ ...data, [e.target.name]: e.target.value })
@@ -41,18 +41,10 @@ export default function Login() {
         try {
             const result = await firebase.auth().signInWithEmailAndPassword(data.email, data.password)
             setUser(result)
-            const u = query.allUsers.edges.find(e => e.node.user_id === user.email);
+            const u = query.allUsers.edges.find(e => e.node.user_id === result.user.email);
             
             if (u){
-                if (u.node.role === "ti"){
-                    navigate("/page-2/", {state:{
-                        role: 'ti'
-                    }})
-                }else{
-                    navigate("/page-2/", {state:{
-                        role: 'bodega'
-                    }})
-                }
+                navigate("/page-2/", {state:u})  
             }
           
             
@@ -71,7 +63,7 @@ export default function Login() {
                 <input name="password" type="password" style={{ textAlign: "right", fontFamily: "Poppins", fontSize: "12px", border: "0.5px solid black", paddingRight: "10px" }} className="block w-56 h-8" placeholder="Contraseña" value={data.password} onChange={handleChange}></input>
                 <button style={{ backgroundColor: "whitesmoke", color: "black", fontFamily: "Poppins", fontSize: "12px", border: "0.5px solid black" }} className="block w-24 ml-16 h-10" type="submit" >Iniciar Sesión</button>
                 <Link
-                    to="/page-2/"
+                    to="/404/"
                     className="ml-10"
                     style={{
                         fontSize: '12px',

@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      { window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : null}
+      { window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : <Header siteTitle={data.site.siteMetadata?.title || `Title`} />}
       
       <div
         style={{
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
           background: `#fa6304`,
         }}
 
-        className="md:h-14 xs:h-16 flex justify-end xs:mt-2 md:mt-3"
+        className="md:h-14 xs:h-16 flex justify-end xs:mt-2 md:-mt-2"
       >
         <div className="grid grid-flow-row ">
           <div style={{ color: 'white', fontFamily: 'Poppins', fontSize: '12px', }}className="ml-12 mt-2">
