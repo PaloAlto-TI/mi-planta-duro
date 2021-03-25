@@ -10,6 +10,15 @@ import { navigate } from "gatsby-link"
 
 const SecondPage = ({ location }) => {
 
+  let loggedUser = null;
+  if (location.state){
+    localStorage.setItem("loggedUser", JSON.stringify(location.state.node));
+  }
+
+  loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+  
+
+  
   //const { user } = useContext(AuthContext)
 
   // const query = useStaticQuery(graphql`
@@ -29,8 +38,7 @@ const SecondPage = ({ location }) => {
   ///console.log(location.state.node);
 
 
-  if (location.state){
-  if (location.state.node ) {
+  if (loggedUser){
     return(
       <Layout>
         <SEO title="Inicio" />
@@ -39,7 +47,7 @@ const SecondPage = ({ location }) => {
         <p>Welcome to page 2</p>
         <Link to="/">Go back to the homepage</Link> */}
     
-        {location.state.node.role === "bodega" ? (
+        {loggedUser.role === "bodega" ? (
             <div className="grid xs:grid-cols-2 md:grid-cols-5 gap-4 xs:pl-8 md:pl-8  mb-28 mt-12">
     
             <div className="w-28">
@@ -64,7 +72,7 @@ const SecondPage = ({ location }) => {
           </div>
       
       
-          )  : ( location.state.node.role = "ti" ?
+          )  : ( loggedUser.role = "ti" ?
             <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-4 xs:pl-8 md:pl-52 mb-28 mt-12">
     
           <div className="w-28 ">
@@ -91,7 +99,7 @@ const SecondPage = ({ location }) => {
         
         <hr className="xs:ml-0 xs:-mt-12 md:-ml-52 md:-mt-16 md:w-screen" style={{ height: '2px', backgroundColor: '#fa6304' }}></hr>
         <div className="grid grid-cols-1 md:pl-96 xs:pl-36">
-          <div className="hr md:-mt-3 md:pl-3 xs:pl-1 xs:-mt-2.5"></div>
+          <div className="hr md:-mt-3 md:pl-3 xs:pl-2 xs:-mt-2.5"></div>
         </div>
     
         <div className="md:ml-72 md:mt-8 md:mb-12">
@@ -128,10 +136,7 @@ const SecondPage = ({ location }) => {
     return null;
   }
 
-}else{
-  navigate("/");
-    return null;
-}
+
   
 }
 
