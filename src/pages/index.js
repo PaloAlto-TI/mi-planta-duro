@@ -7,10 +7,21 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 import Login  from "../components/login"
-const IndexPage = () => (
+import Home  from "../components/home"
+
+const IndexPage = () => {
+  
+  let userLogged = null;
+  
+  if (localStorage.getItem("loggedUser")){
+    userLogged = JSON.parse(localStorage.getItem("loggedUser"));
+  }
+
+  
+  return (
   <Layout>
     <SEO title="DURO" />
-    <Login/>
+     { !userLogged ? <Login/>: <Home role={userLogged.role}/>}
     {/* <div className="grid grid-flow-row auto-rows-max place-content-center space-y-6 md:pt-24 md:pb-28 xs:pt-52 xs:pb-56">
       <input type="text" style={{ textAlign: "right", fontFamily: "Poppins", fontSize: "12px", border: "0.5px solid black", paddingRight: "10px" }} className="block w-56 h-8" placeholder="Usuario"></input>
       <input type="password" style={{ textAlign: "right", fontFamily: "Poppins", fontSize: "12px", border: "0.5px solid black", paddingRight: "10px" }} className="block w-56 h-8" placeholder="Contraseña"></input>
@@ -43,8 +54,8 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
-  </Layout>
-)
+  </Layout> )
+}
 
 export default IndexPage
 
