@@ -29,6 +29,7 @@ export default function Login() {
                 node {
                 role
                 user_id
+                nombre
                 }
             }
             }

@@ -13,8 +13,10 @@ const IndexPage = () => {
   
   let userLogged = null;
   
-  if (localStorage.getItem("loggedUser")){
-    userLogged = JSON.parse(localStorage.getItem("loggedUser"));
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem("loggedUser")){
+      userLogged = JSON.parse(localStorage.getItem("loggedUser"));
+    }
   }
 
   

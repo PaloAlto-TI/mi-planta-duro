@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      { window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : <Header siteTitle={data.site.siteMetadata?.title || `Title`} />}
+      { typeof window !== 'undefined' ? ( window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : <Header siteTitle={data.site.siteMetadata?.title || `Title`} />) : null}
       
       <div
         style={{

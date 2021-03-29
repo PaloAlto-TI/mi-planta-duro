@@ -64,7 +64,8 @@ module.exports = {
             collection: 'users',
             map: doc => ({
               user_id: doc.user_id,
-              role: doc.role
+              role: doc.role,
+              nombre: doc.nombre
             }),
           },
         ],

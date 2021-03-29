@@ -13,14 +13,16 @@ import Home  from "../components/home"
 const SecondPage = ({ location }) => {
 
   let loggedUser = null;
-  if (location.state){
-    localStorage.setItem("loggedUser", JSON.stringify(location.state.node));
+  if ( typeof window !== 'undefined') {
+    if (location.state){
+      
+      localStorage.setItem("loggedUser", JSON.stringify(location.state.node));
+    }
+
+    loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    
+    console.log(loggedUser)
   }
-
-  loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-  
-
-  
   //const { user } = useContext(AuthContext)
 
   // const query = useStaticQuery(graphql`
@@ -48,12 +50,14 @@ const SecondPage = ({ location }) => {
         {/* <h1>Hi from the second page</h1>
         <p>Welcome to page 2</p>
         <Link to="/">Go back to the homepage</Link> */}
-    
+        {loggedUser.nombre}
         <Home role={loggedUser.role}/>
     
       </Layout>)
   }else{
-    navigate("/");
+    if ( typeof window !== 'undefined') {
+      navigate("/");
+    }
     return null;
   }
 
