@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => {
         margin: `0 auto`,
         maxWidth: 35,
         paddingTop: '0.2rem',
-      }} onClick={handleLogout}><Image resource={"logout_icon.png"} />
+      }} role="button" tabIndex="0" onKeyDown={handleLogout} onClick={handleLogout}><Image resource={"logout_icon.png"} />
 </div> :null}
   </div>
   </div>

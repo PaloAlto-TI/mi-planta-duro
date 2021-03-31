@@ -50,8 +50,8 @@ const SecondPage = ({ location }) => {
         {/* <h1>Hi from the second page</h1>
         <p>Welcome to page 2</p>
         <Link to="/">Go back to the homepage</Link> */}
-        {loggedUser.nombre}
-        <Home role={loggedUser.role}/>
+        
+        <Home role={loggedUser.role} user={loggedUser.nombre}/>
     
       </Layout>)
   }else{

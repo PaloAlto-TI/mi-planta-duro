@@ -80,7 +80,8 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+    },
+
   
   ],
 }
