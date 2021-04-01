@@ -15,7 +15,6 @@ export default function Home(props) {
         return (
 
              <div>
-          {user}
 
             <div className="grid xs:grid-cols-2 md:grid-cols-5 gap-4 xs:pl-8 md:pl-8  mb-28 mt-12">
         
@@ -78,7 +77,6 @@ export default function Home(props) {
     
     }else if (role === "bodega"){
         return  ( <div>
-          {user}
 
              <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-4 xs:pl-8 md:pl-52 mb-28 mt-12">
     

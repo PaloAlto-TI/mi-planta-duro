@@ -5,6 +5,7 @@ import Image from "../components/image"
 import firebase from "gatsby-plugin-firebase"
 import { navigate } from "gatsby-link"
 import { AuthContext } from "../context/auth"
+import Burger from "./burger"
 
 // import firebase from "gatsby-plugin-firebase"
 // import { navigate } from "gatsby-link"
@@ -14,6 +15,17 @@ const Header = ({ siteTitle }) => {
   
   const { user } = useContext(AuthContext)
 
+  let loggedUser = null;
+  if ( typeof window !== 'undefined') {
+    if (localStorage.getItem("loggedUser")){
+      
+    
+      loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    
+      console.log(loggedUser)
+    }
+
+  }
    const handleLogout = async () =>{
      await firebase.auth().signOut();
      navigate("/")
@@ -30,9 +42,10 @@ const Header = ({ siteTitle }) => {
   >
 
 <div className="flex h-14">
-  <div className="flex-grow  h-16 ...">
+  <div className="desktop flex-grow  h-16 ...">
+      {loggedUser ? loggedUser.nombre : null}
   </div>
-  <div className="flex-shrink xs:w-72 md:w-3/4 h-16 ...">
+  <div className="flex-shrink xs:w-72 xs:ml-10 md:w-3/4 h-16 ...">
   <div
       style={{
         margin: `0 auto`,
@@ -51,12 +64,14 @@ const Header = ({ siteTitle }) => {
         padding: '0.5rem 0.5rem',
       }}
     >
-      { user? <div title="Salir de Mi Planta" style={{
+      { user?
+      <Burger loggedUser={loggedUser} /> : null}
+      {/* { user? <div title="Salir de Mi Planta" style={{
         margin: `0 auto`,
         maxWidth: 35,
         paddingTop: '0.2rem',
       }} role="button" tabIndex="0" onKeyDown={handleLogout} onClick={handleLogout}><Image resource={"logout_icon.png"} />
-</div> :null}
+</div> :null} */}
   </div>
   </div>
 </div>
