@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => {
 <div className="flex h-14">
   <div className="flex-grow  h-16 ...">
   </div>
-  <div className="flex-shrink w-72 h-16 ...">
+  <div className="flex-shrink xs:w-72 md:w-3/4 h-16 ...">
   <div
       style={{
         margin: `0 auto`,
@@ -45,10 +45,9 @@ const Header = ({ siteTitle }) => {
 
   </div>
   <div className="flex-grow h-16 ...">
-  <div
+  <div 
       style={{
         margin: `0 auto`,
-        maxWidth: 350,
         padding: '0.5rem 0.5rem',
       }}
     >
