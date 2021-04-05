@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/`],
+        precachePages: [`/*`],
         appendScript: require.resolve(`./custom-sw-code.js`),
       },
     },

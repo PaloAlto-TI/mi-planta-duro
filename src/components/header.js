@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => {
      }
    }
 
-  return (<header
+  return (<header className="sticky"
     style={{
       background: `#fa6304`,
       marginBottom: `1.45rem`,
@@ -42,10 +42,18 @@ const Header = ({ siteTitle }) => {
   >
 
 <div className="flex h-14">
-  <div className="desktop flex-grow  h-16 ...">
-      {loggedUser ? loggedUser.nombre : null}
+  <div className="desktop flex flex-grow w-8 h-16 mt-4 ml-16 ...">
+    
+      <div className="flex-1 w-64" style={{
+        margin: `0 auto`,
+        maxWidth: 35,
+        marginTop: "-2%"}}>{loggedUser ? <Image resource={"user_icon.png"} /> : null}</div>
+      <div className="flex-1" style={{ fontFamily:"Poppins", color:"white", fontSize:"14px"}}>{loggedUser ? loggedUser.nombre : null} </div>
+
+    
+       
   </div>
-  <div className="flex-shrink xs:w-72 xs:ml-10 md:w-3/4 h-16 ...">
+  <div className="flex-shrink xs:w-72 xs:ml-11 md:-ml-20 md:w-3/4 h-16 ...">
   <div
       style={{
         margin: `0 auto`,
@@ -64,7 +72,7 @@ const Header = ({ siteTitle }) => {
         padding: '0.5rem 0.5rem',
       }}
     >
-      { user?
+      { user? 
       <Burger loggedUser={loggedUser} /> : null}
       {/* { user? <div title="Salir de Mi Planta" style={{
         margin: `0 auto`,
@@ -72,6 +80,15 @@ const Header = ({ siteTitle }) => {
         paddingTop: '0.2rem',
       }} role="button" tabIndex="0" onKeyDown={handleLogout} onClick={handleLogout}><Image resource={"logout_icon.png"} />
 </div> :null} */}
+
+{ user? 
+      <div className="desktop" title="Salir de Mi Planta" style={{
+        margin: `0 auto`,
+        maxWidth: 35,
+        paddingTop: '0.2rem',
+      }} role="button" tabIndex="0" onKeyDown={handleLogout} onClick={handleLogout}><Image resource={"logout_icon.png"} />
+</div> : null}
+
   </div>
   </div>
 </div>

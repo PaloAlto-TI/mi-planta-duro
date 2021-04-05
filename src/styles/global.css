@@ -4,7 +4,7 @@
 
 
 div.hr{
-    width:70%;
+    width:100%;
 }
     
 
@@ -51,5 +51,11 @@ div.hr:after {
   @media (max-width: 500px) { 
     .desktop{
       display: none;
+    }
+
+    .sticky{
+      position: 'fixed';
+      top: 0;
+      z-index: 30;
     }
    }

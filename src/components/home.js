@@ -7,7 +7,7 @@ import Image from "../components/image"
 
 export default function Home(props) {
 
-    const {role, user} = props;
+    const {role} = props;
 
     console.log(role)
 

@@ -49,14 +49,14 @@ const RightNav = ( props) => {
                 <div className="w-8 ml-4 ">
                     <Image resource={"user_icon.png"} />
                 </div>
-                <div className="xs:-ml-36 xs:-mt-4 ">
+                <div className="xs:-ml-32 xs:-mt-4 ">
                     <li>{loggedUser ? loggedUser.nombre : null}</li>
                 </div>
                 <div className="w-8 ml-4 ">
                 <Image resource={"logout_icon.png"} />
                 </div>
-                <div className="xs:-ml-36 xs:-mt-4 ">
-                    <li onClick={handleLogout}>Salir</li>
+                <div role="button" tabIndex="0" onKeyDown={handleLogout} onClick={handleLogout} className="xs:-ml-32 xs:-mt-4 ">
+                    <li>Salir</li>
                 </div>
             </div>
 
