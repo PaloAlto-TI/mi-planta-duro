@@ -25,8 +25,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      { typeof window !== 'undefined' ? ( window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : <Header siteTitle={data.site.siteMetadata?.title || `Title`} />) : null}
-      
+      {/* { typeof window !== 'undefined' ? ( window.location.pathname === "/" ? <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> : <Header siteTitle={data.site.siteMetadata?.title || `Title`} />) : null} */}
+      <Header/>
       <div
         style={{
           margin: `0 auto`,
