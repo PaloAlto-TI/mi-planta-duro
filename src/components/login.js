@@ -11,9 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 export default function Login() {
-    const notify = () => toast("Contraseña incorrecta", {
-        position: toast.POSITION.TOP_CENTER,
-      });
+ 
 
    
     const [data, setData] = useState({
@@ -52,14 +50,42 @@ export default function Login() {
 
             if (u) {
                 navigate("/page-2/", { state: u })
+            }else{
+                console.log("no paso")
             }
 
 
 
         } catch (err) {
-            notify()
+
+            let notify;
+            switch (err.code) {
+                case "auth/invalid-email":
+                    notify = () => toast("Email requerido", {
+                        position: toast.POSITION.TOP_CENTER,
+                      });
+                    break;
+            
+                case "auth/wrong-password":
+                    notify = () => toast("Contraseña incorrecta", {
+                        position: toast.POSITION.TOP_CENTER,
+                    });
+                    break;
+                case "auth/user-not-found":
+                    notify = () => toast("El email no está registrado", {
+                        position: toast.POSITION.TOP_CENTER,
+                    });
+                    break;
+                default:
+                    notify = () => toast("Credenciales incorrectas", {
+                        position: toast.POSITION.TOP_CENTER,
+                    });
+                    break;
+            }
+            
+            notify();
             setData({ ...data, error: err.message })
-            console.log(err)
+            console.log(err.code)
         }
     }
 

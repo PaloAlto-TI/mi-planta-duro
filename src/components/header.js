@@ -4,7 +4,6 @@ import React, {useContext} from "react"
 import Image from "../components/image"
 import firebase from "gatsby-plugin-firebase"
 import { navigate } from "gatsby-link"
-import { AuthContext } from "../context/auth"
 import Burger from "./burger"
 
 // import firebase from "gatsby-plugin-firebase"
@@ -13,7 +12,6 @@ import Burger from "./burger"
 
 const Header = ({ siteTitle }) => {
   
-  const { user } = useContext(AuthContext)
 
   let loggedUser = null;
   if ( typeof window !== 'undefined') {
@@ -72,7 +70,7 @@ const Header = ({ siteTitle }) => {
         padding: '0.5rem 0.5rem',
       }}
     >
-      { user? 
+      { loggedUser ? 
       <Burger loggedUser={loggedUser} /> : null}
       {/* { user? <div title="Salir de Mi Planta" style={{
         margin: `0 auto`,
@@ -81,7 +79,7 @@ const Header = ({ siteTitle }) => {
       }} role="button" tabIndex="0" onKeyDown={handleLogout} onClick={handleLogout}><Image resource={"logout_icon.png"} />
 </div> :null} */}
 
-{ user? 
+{ loggedUser? 
       <div className="desktop" title="Salir de Mi Planta" style={{
         margin: `0 auto`,
         maxWidth: 35,

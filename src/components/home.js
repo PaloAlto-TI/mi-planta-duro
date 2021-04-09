@@ -14,7 +14,7 @@ export default function Home(props) {
     if (role === "ti"){
         return (
 
-             <div>
+            <section>
 
             <div className="grid xs:grid-cols-2 md:grid-cols-5 gap-4 xs:pl-8 md:pl-8  mb-28 mt-12">
         
@@ -71,28 +71,28 @@ export default function Home(props) {
     
         </div>
     
-          </div>
+          </section>
           
         )
     
     }else if (role === "bodega"){
-        return  ( <div>
+        return  ( <section>
 
-             <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-4 xs:pl-8 md:pl-52 mb-28 mt-12">
+             <div className="grid xs:grid-cols-2 md:grid-cols-4  xs:pl-8 md:pl-20 mb-28 mt-12">
     
           <div className="w-28 ">
             <Image resource={"logo_sites_duro.png"} />
           </div>
     
-          <div className="w-28 md:-ml-16">
+          <div className="w-28">
             <Image resource={"logo_sites_duro.png"} />
           </div>
     
-          <div className="w-28 md:-ml-32">
+          <div className="w-28">
             <Image resource={"logo_sites_duro.png"} />
           </div>
     
-          <div className="w-28 md:mt-8">
+          <div className="w-28">
             <Image resource={"logo_sites_duro.png"} />
           </div>
     
@@ -131,7 +131,7 @@ export default function Home(props) {
     
         </div>
     
-        </div>
+        </section>
         )
     }
 

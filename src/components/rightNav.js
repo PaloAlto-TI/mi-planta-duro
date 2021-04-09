@@ -16,7 +16,7 @@ const Ul = styled.ul`
     background-color: #fa6304;
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
-    top: 0;
+    top: 50px;
     right: 0;
     height: 100vh;
     width: 100vw;

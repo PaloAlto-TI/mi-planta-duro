@@ -53,9 +53,22 @@ div.hr:after {
       display: none;
     }
 
-    .sticky{
-      position: 'fixed';
-      top: 0;
-      z-index: 30;
-    }
+ 
    }
+
+   @media (min-width: 769px) {
+   footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 33.5rem;
+    width: 100%;
+
+   }
+  }
+
+  .sticky{
+    position: 'fixed';
+    top: 0;
+    z-index: 30;
+  }
