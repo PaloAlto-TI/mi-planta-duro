@@ -1,6 +1,6 @@
 // import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, {useContext} from "react"
+import React from "react"
 import Image from "../components/image"
 import firebase from "gatsby-plugin-firebase"
 import { navigate } from "gatsby-link"
@@ -12,7 +12,6 @@ import Burger from "./burger"
 
 const Header = ({ siteTitle }) => {
   
-
   let loggedUser = null;
   if ( typeof window !== 'undefined') {
     if (localStorage.getItem("loggedUser")){
