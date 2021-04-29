@@ -12,6 +12,8 @@ import Img from 'gatsby-image';
  * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+
+//CARGA DE IMÁGENES CON GRAPHQL
 const Image = props => (
   <StaticQuery
     query={graphql`

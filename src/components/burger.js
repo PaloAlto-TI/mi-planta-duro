@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import RightNav from './rightNav';
 
+
+//COMPONENTE PARA BOTON DE SIDEBAR
 const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;

@@ -11,6 +11,7 @@ export default function Home(props) {
 
     console.log(role)
 
+    //RENDERIZADO DE DIFERENTES INICIOS SEGÚN ROL
     if (role === "ti"){
         return (
 

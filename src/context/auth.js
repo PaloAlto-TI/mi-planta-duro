@@ -3,6 +3,7 @@ import firebase from "gatsby-plugin-firebase"
 
 export const AuthContext = createContext({})
 
+//CONTEXT PARA AUTENTICACIÓN
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState()
 

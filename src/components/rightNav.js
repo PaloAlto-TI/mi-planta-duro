@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Image from "../components/image"
 import firebase from "gatsby-plugin-firebase"
 
-
+//COMPONENTE PARA SIDEBAR
 const Ul = styled.ul`
   list-style: none;
   display: flex;

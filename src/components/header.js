@@ -9,9 +9,10 @@ import Burger from "./burger"
 // import firebase from "gatsby-plugin-firebase"
 // import { navigate } from "gatsby-link"
 
-
+// HEADER FRONTEND
 const Header = ({ siteTitle }) => {
   
+  // MANEJO DE USUARIO
   let loggedUser = null;
   if ( typeof window !== 'undefined') {
     if (localStorage.getItem("loggedUser")){

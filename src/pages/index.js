@@ -9,6 +9,8 @@ import SEO from "../components/seo"
 import Login  from "../components/login"
 import Home  from "../components/home"
 
+
+// PÁGINA RAÍZ
 const IndexPage = () => {
   
   let userLogged = null;

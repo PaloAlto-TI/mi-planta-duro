@@ -43,6 +43,8 @@ export default function Login() {
     const handleSubmit = async e => {
         e.preventDefault()
         setData({ ...data, error: null })
+
+        // TOAST PARA LOGIN - MENSAJES DE VALIDACIÓN EN ACCESO 
         try {
             const result = await firebase.auth().signInWithEmailAndPassword(data.email, data.password)
             setUser(result)

@@ -10,6 +10,7 @@ import Home  from "../components/home"
 // import { useStaticQuery, graphql } from "gatsby"
 
 
+// PAGINA CON COMPONENTES DE HOME
 const SecondPage = ({ location }) => {
 
   let loggedUser = null;
